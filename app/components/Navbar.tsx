@@ -146,7 +146,7 @@ const teamDancers: { name: string; teams: string[] }[] = [
   { name: "Simay Topçu", teams: ["Swing"] },
   { name: "Tuna Çimen", teams: ["Swing"] },
   { name: "Umut Çağan Uslu", teams: ["Swing"] },
-  { name: "Zehra Güzel Sağaltıcı", teams: ["Swing"] },
+  { name: "Zehra Güzelsağaltıcı", teams: ["Swing"] },
   { name: "Başak Karamalak", teams: ["International Ballroom"] },
   { name: "Berkay Koruyucu", teams: ["International Ballroom"] },
   { name: "Derin Su Ergüz", teams: ["International Ballroom"] },
