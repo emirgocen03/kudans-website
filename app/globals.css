@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 0, 0, 0;
+  --primary-color: 255, 255, 255;
+  --accent-color-dark: 40, 40, 40;
+  --accent-color-medium: 60, 60, 60;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.5s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border border-white text-white font-medium rounded-full hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 hover:shadow-lg;
+  }
+
+  /* Fluid animation utilities */
+  .transition-transform-opacity {
+    @apply transition-all duration-500 ease-in-out;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .scale-on-hover {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+} 
