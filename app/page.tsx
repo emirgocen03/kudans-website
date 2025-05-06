@@ -48,9 +48,8 @@ export default function Home() {
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Çıplak Ayaklar Kumpanyası</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">#direniş sahnede</p>
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:30 - 12:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Morning Yoga</h4>
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
@@ -70,12 +69,17 @@ export default function Home() {
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">15:00 - 16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">2day Hip-hop Workshop</h4>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Ümit Sönmezler Hip-hop Workshop</h4>
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - ...</span>
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - 17:00</span>
                   <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Cha Cha Workshop</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-purple-900 to-purple-800 p-3 sm:p-4 rounded-lg mt-4">
+                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">20:00 (Doors open at 19:30)</h4>
                 </div>
               </div>
             </div>
@@ -99,9 +103,13 @@ export default function Home() {
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">BIZ Atölye (With Kaldans in Sports Hall)</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00 - 12:45</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emir Tap Workshop</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">With Kaldans in the sports hall</p>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emir Göcen Tap Workshop</h4>
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
@@ -121,8 +129,12 @@ export default function Home() {
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">İlayda Deringör & Gökdağ Yalçın</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Tango Performance</p>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">İlayda Deringör & Gökdağ Yalçın (Tango)</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-pink-900 to-pink-800 p-3 sm:p-4 rounded-lg mt-4">
+                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">19:00 (Doors open at 18:30)</h4>
                 </div>
               </div>
             </div>
@@ -142,8 +154,7 @@ export default function Home() {
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:45 - 12:40</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Bora Aktaş & İlbilge Acır</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Swing Workshop</p>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Bora Aktaş & İlbilge Acır (Swing Workshop)</h4>
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
@@ -158,8 +169,7 @@ export default function Home() {
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">14:00 - 14:50</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Tuana & Selena</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Hip-hop Workshop</p>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Tuana & Selena (Hip-hop Workshop)</h4>
                 </div>
 
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
@@ -170,6 +180,11 @@ export default function Home() {
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
                   <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - 17:30</span>
                   <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Soul Train</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-indigo-900 to-indigo-800 p-3 sm:p-4 rounded-lg mt-4">
+                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">19:00 (Doors open at 18:30)</h4>
                 </div>
               </div>
             </div>
