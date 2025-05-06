@@ -18,12 +18,20 @@ export default function Home() {
       <section className="bg-gradient-to-b from-black to-gray-900 py-16 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent opacity-80"></div>
         <div className="container-custom relative z-10">
-          <h2 className="text-3xl font-bold mb-8 text-center text-white relative inline-block mx-auto w-full">
-            <span className="relative inline-block">
-              Festival Schedule
-              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></span>
-            </span>
-          </h2>
+          <div className="flex items-center justify-center gap-4 mb-8">
+            <h2 className="text-3xl font-bold text-center text-white relative inline-block">
+              <span className="relative inline-block">
+                Festival Schedule
+                <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></span>
+              </span>
+            </h2>
+            <div className="relative">
+              <span className="animate-ping absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></span>
+              <span className="inline-flex items-center px-4 py-2 rounded-full text-base font-bold bg-red-600 text-white shadow-lg shadow-red-500/30">
+                LIVE
+              </span>
+            </div>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
             {/* Day 1 */}
@@ -33,17 +41,41 @@ export default function Home() {
                 <span className="bg-purple-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 6</span>
               </div>
               
-              <div className="space-y-3 sm:space-y-5">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Morning (10:00 - 13:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">The Awakening</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">A mysterious beginning to our journey... <span className="text-purple-400">What will be revealed?</span></p>
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
                 </div>
-                
+
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Evening (19:00 - 22:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Shadows and Light</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">As darkness falls, the boundaries between <span className="text-purple-400">reality and illusion blur</span></p>
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Çıplak Ayaklar Kumpanyası</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">#direniş sahnede</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:00 - 13:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:30 - 15:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Fair Games</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">15:00 - 16:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">2day Hip-hop Workshop</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - ...</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Cha Cha Workshop</h4>
                 </div>
               </div>
             </div>
@@ -55,17 +87,42 @@ export default function Home() {
                 <span className="bg-pink-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 7</span>
               </div>
               
-              <div className="space-y-3 sm:space-y-5">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Morning (11:00 - 14:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">The Hidden Path</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">Discover secret techniques and <span className="text-pink-400">forgotten movements</span> in this enigmatic gathering</p>
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
                 </div>
-                
+
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Evening (19:00 - 22:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Enigma Variations</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">A sequence of <span className="text-pink-400">cryptic performances</span> that challenge perception and expectation</p>
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:30 - 12:15</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00 - 12:45</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emir Tap Workshop</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">With Kaldans in the sports hall</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:30 - 14:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Nazlıhan Vardarlı High Heels Workshop</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">14:30 - 16:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Game Time</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">İlayda Deringör & Gökdağ Yalçın</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Tango Performance</p>
                 </div>
               </div>
             </div>
@@ -77,17 +134,42 @@ export default function Home() {
                 <span className="bg-indigo-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 8</span>
               </div>
               
-              <div className="space-y-3 sm:space-y-5">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Morning (10:00 - 13:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">The Convergence</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">All paths <span className="text-indigo-400">meet at the crossroads</span> in this pivotal moment of revelation</p>
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
                 </div>
-                
+
                 <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">Evening (20:00 - 23:00)</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">The Grand Unveiling</h4>
-                  <p className="text-gray-400 text-xs sm:text-sm">The final <span className="text-indigo-400">transformation</span> where all secrets will be revealed in a spectacular display</p>
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:45 - 12:40</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Bora Aktaş & İlbilge Acır</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Swing Workshop</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:00 - 14:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance & Fair Games</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">14:00 - 14:50</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Tuana & Selena</h4>
+                  <p className="text-gray-400 text-xs sm:text-sm">Hip-hop Workshop</p>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">15:00 - 16:00</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emek & Büşra Yeter</h4>
+                </div>
+
+                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
+                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - 17:30</span>
+                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Soul Train</h4>
                 </div>
               </div>
             </div>

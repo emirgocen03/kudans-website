@@ -133,7 +133,7 @@ const teamDancers: { name: string; teams: string[] }[] = [
   { name: "Ahmet Emre Kuranoğlu", teams: ["Swing"] },
   { name: "Ahmet Özkan Canbulat", teams: ["Swing"] },
   { name: "Ayşe Nur Kılıç", teams: ["Swing"] },
-  { name: "Bengü Selmi", teams: ["Swing"] },
+  { name: "Bengü Selvi", teams: ["Swing"] },
   { name: "Beril Göktaş", teams: ["Swing"] },
   { name: "Ceylin Yalnız", teams: ["Swing"] },
   { name: "Çağlar Ege Aydın", teams: ["Swing"] },

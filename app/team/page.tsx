@@ -80,7 +80,7 @@ const danceTeams: DanceTeam[] = [
       { name: "Ahmet Emre Kuranoğlu", instagram: "ahmetemre_23", quote: "Gösterdiğim hareketi tekte yapana jagerler benden", image: "/images/team/IMG_0202 - AHMET EMRE KURANOGLU.jpg" },
       { name: "Ahmet Özkan Canbulat" },
       { name: "Ayşe Nur Kılıç", image: "/images/team/IMG_3012 - AYSE NUR KILIC.jpeg" },
-      { name: "Bengü Selmi" },
+      { name: "Bengü Selvi" },
       { name: "Beril Göktaş" },
       { name: "Ceylin Yalnız" },
       { name: "Çağlar Ege Aydın" },

@@ -202,7 +202,7 @@ export const danceStyles: DanceStyle[] = [
     `,
     imagePath: '/images/dances/international-ballroom.jpg',
     instructors: [
-      {name: 'Viktor Synevich', title: 'Ballroom Director', image: '/images/dances/intballroom1_inst.png', bio: 'Viktor Synevich is a Ukraine-born dancer and adjudicator who began his career at age five. Holding a university degree in dance, he has competed and taught across International Standard and Latin disciplines. Since 2002, he has been active in Turkey as a certified TDSF and WDSF adjudicator. He is a co-founder of Master Dance Antalya and has been teaching show and competition classes at KUDANS since 2014.'},
+      {name: 'Viktor Sinevych', title: 'Ballroom Director', image: '/images/dances/intballroom1_inst.png', bio: 'Viktor Synevich is a Ukraine-born dancer and adjudicator who began his career at age five. Holding a university degree in dance, he has competed and taught across International Standard and Latin disciplines. Since 2002, he has been active in Turkey as a certified TDSF and WDSF adjudicator. He is a co-founder of Master Dance Antalya and has been teaching show and competition classes at KUDANS since 2014.'},
       {name: 'Esin Bahat', title: 'Standard Ballroom Coach', image: '/images/dances/intballroom2_inst.png', instagram: 'esin.bahat', bio: 'Esin began her dance career at an early age and has specialized in various dance styles, particularly High Heels, Street Jazz, Hip-hop, and K-pop. While studying Psychology at Doğuş University, she continued to pursue her passion for dance and became recognized as a professional dancer.'},
     ],
     schedule: [
