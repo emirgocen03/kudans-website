@@ -8,7 +8,7 @@ export default function AboutPage() {
       <div className="relative min-h-[80vh] w-full overflow-hidden">
         <Image
           src="/images/kudans_team.jpg"
-          alt="KUDANS Team"
+          alt="KUDANS Koç University Dance Club Team Photo"
           fill
           className="object-cover"
           priority

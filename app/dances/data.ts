@@ -163,7 +163,7 @@ export const danceStyles: DanceStyle[] = [
     longDescription: `
       Swing at KUDANS brings the soul of the 1920s-1930s dance floors to now, focusing mainly on Lindy Hop and Solo Jazz, and to some extent Blues, Bebop, and Tap.
       
-      We learn an expressive form of movement that emerged from Black communities in Harlem during the 1920s and 1930s, deeply rooted in the rhythms of jazz music born alongside the magical sounds of Duke Ellington, Count Basie, Ella Fitzgerald and many other talented artists. We learn a unique form of storytelling and draw our inspiration from legendary dancers like Frankie Manning, Norma Miller, Al Minns, and Leon James. 
+      We learn an expressive form of movement that emerged from Black communities in Harlem during the 1920s and 1930s, deeply rooted in the rhythms of jazz music born alongside the magical sounds of Duke Ellington, Count Basie, Billie Holiday, Ella Fitzgerald and many other talented artists. We learn a unique form of storytelling and draw our inspiration from legendary dancers like Frankie Manning, Norma Miller, Josephine Baker, Mabel Lee, Al Minns, and Leon James. 
       
       Here, we try to capture a full spectrum of human emotion: resistance, resilience, celebration, sorrow, and love. Far from being only a symbol of happiness, our dance embodies the full range of human experience. It reflects the cultural richness and spirit of a community that used dance both to survive and to thrive in the face of adversity.
 

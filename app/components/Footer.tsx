@@ -55,7 +55,7 @@ const Footer = () => {
               <div className="relative h-12 w-32 mr-2">
                 <Image 
                   src="/images/kudans_logo.png" 
-                  alt="KUDANS Logo" 
+                  alt="KUDANS Koç University Dance Club Logo" 
                   fill 
                   className="object-contain" 
                 />

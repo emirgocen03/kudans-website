@@ -4,12 +4,25 @@ import HomeBanner from './components/HomeBanner';
 import FestivalPreview from './components/FestivalPreview';
 import SocialMediaLinks from './components/SocialMediaLinks';
 
+export const metadata = {
+  title: "KUDANS - Koç University Dance Club",
+  description: "Official website of KUDANS - Koç University Dance Club",
+  openGraph: {
+    title: "KUDANS - Koç University Dance Club",
+    description: "Official website of KUDANS - Koç University Dance Club",
+    url: "https://kudans.co",
+    siteName: "KUDANS",
+    locale: "tr_TR",
+    type: "website",
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
       <HomeBanner 
-        title={<Image src="/images/CARNAVAL_banner.png" alt="CARNAVAL Festival Logo" width={1500} height={400} priority style={{margin: '0 auto'}} />} 
+        title={<Image src="/images/CARNAVAL_banner.png" alt="KUDANS Carnaval Festival 2025 Banner" width={1500} height={400} priority style={{margin: '0 auto'}} />} 
         buttonText="Learn More" 
         buttonLink="https://www.instagram.com/kudans/" 
       />
@@ -28,7 +41,7 @@ export default function Home() {
             <div className="relative">
               <span className="animate-ping absolute -top-1 -right-1 w-3 h-3 bg-red-600 rounded-full"></span>
               <span className="inline-flex items-center px-4 py-2 rounded-full text-base font-bold bg-red-600 text-white shadow-lg shadow-red-500/30">
-                LIVE
+                PAST
               </span>
             </div>
           </div>

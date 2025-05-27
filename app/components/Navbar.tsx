@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FiSearch, FiX } from 'react-icons/fi';
 import { danceStyles } from '../dances/data';
+import { useRouter } from 'next/navigation';
 
 // Define interface for menu items
 interface MenuItem {
@@ -178,6 +179,7 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -397,6 +399,9 @@ const Navbar = () => {
   // Search functionality
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
+    if (searchQuery.toLowerCase() === 'dbd') {
+      router.push('/dbd');
+    }
     if (!searchQuery.trim()) {
       setSearchResults([]);
       return;
@@ -637,7 +642,7 @@ const Navbar = () => {
             <div className="relative h-14 w-44 transition-all duration-500 group-hover:scale-105 bg-transparent overflow-hidden flex items-center justify-center">
               <Image 
                 src="/images/kudans_logo-transparent.png" 
-                alt="KUDANS Logo" 
+                alt="KUDANS Koç University Dance Club Logo" 
                 fill 
                 className="object-contain object-center scale-150" 
                 priority
@@ -826,7 +831,7 @@ const Navbar = () => {
             <div className="relative h-12 w-32 transition-transform duration-300 bg-transparent overflow-hidden">
               <Image 
                 src="/images/kudans_logo-transparent.png" 
-                alt="KUDANS Logo" 
+                alt="KUDANS Koç University Dance Club Logo" 
                 fill 
                 className="object-contain object-center scale-150" 
                 priority

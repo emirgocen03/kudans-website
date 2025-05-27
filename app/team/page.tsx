@@ -115,12 +115,12 @@ const danceTeams: DanceTeam[] = [
       { name: "Pervin Manap" },
       { name: "Polen Çevik" },
       { name: "Selena Özkaner" },
-      { name: "Selinsu Naz Varlı" },
+      { name: "Selinsu Naz Varlı", instagram: "nazzvarli", quote: "Dance or die 🌟", image: "/images/team/IMG_3018 - SELINSU NAZ VARLI.jpeg" },
       { name: "Selin Lea Klein" },
       { name: "Selin Yücetin" },
       { name: "Simay Akıncı" },
       { name: "Sofiia Salopino" },
-      { name: "Tuana Hoş" },
+      { name: "Tuana Hoş", instagram: "_tuanahos", image: "/images/team/IMG_7546 - TUANA HOS.jpeg" },
       { name: "Valentin Py", instagram: "valentin.py", quote: "Exchange 2024 - 2025", image: "/images/team/Screenshot_20250503_183003_WhatsApp - VALENTIN PY.jpg" },
       { name: "Zeynep Akın" },
       { name: "Zeynep Özveri", instagram: "zeynepozveri_", image: "/images/team/IMG_2344 - ZEYNEP OZVERI.jpeg" },
@@ -139,7 +139,7 @@ const danceTeams: DanceTeam[] = [
       { name: "Burak Kahvecioğlu", image: "/images/team/E2A146FB-3983-4657-B4B1-CAF142C7AD27 - burak kahvecioğlu.jpeg" },
       { name: "Ece Derman" },
       { name: "Elvan Kimyon", instagram: "elvankimyon", image: "/images/team/IMG_0055 - Elvan Kimyon.jpeg" },
-      { name: "Ennur Akan" },
+      { name: "Ennur Akan", instagram: "ennurakan", quote: "Binllleeerce dansöööz var", image: "/images/team/IMG_4034 - ENNUR AKAN.jpeg" },
       { name: "Ezgi Bekiroğlu", instagram: "ezgibekirogluu", image: "/images/team/IMG_0292 - EZGI BEKIROGLU.jpeg" },
       { name: "Kutay Keleş" },
       { name: "Neslisu Demirel" },
@@ -173,26 +173,34 @@ const danceTeams: DanceTeam[] = [
     dancers: [
       { name: "Ali Ozan Beşen", instagram: "ozanbesen", quote: "Her şey emeğin olacak!", image: "/images/team/WhatsApp Image 2025-04-29 at 21.13.07 - ALI OZAN BESEN.jpeg" },
       { name: "Altuğ Çağhan Arslan" },
-      { name: "Belgin Karakoç" },
+      { name: "Belgin Karakoç", instagram: "belgin.karakoc", quote: "dreamer dancer translater of Jar", image: "/images/team/IMG_6544 - BELGIN KARAKOC.png" },
       { name: "Candan Aydiş", instagram: "candanaydis", quote: "tesadüfen geldim karar verince gideceğim", image: "/images/team/IMG_2676 - NUR CANDAN AYDIS.jpeg" },
       { name: "Cansu Pınar Çırpan", image: "/images/team/4d1161b0-8cf7-44a0-9a5d-e6379caeb7a5 - CANSU PINAR CIRPAN.jpeg" },
       { name: "Cemre Yavuz" },
       { name: "Ceyda Çelik" },
       { name: "Eda Yalçın" },
-      { name: "Gülce Sevim" },
+      { name: "Gülce Sevim", instagram: "gulce.sevim", image: "/images/team/IMG_2337 - GULCE SEVIM.jpeg" },
       { name: "Irmak Bozkurt" },
       { name: "Kayrahan Yüce", instagram: "kayrahanyuce", quote: "Gündüzleri fotoğrafçı akşamları dansçı olan mühendislik öğrencisi", image: "/images/team/0494CA17-ACA0-4AB8-B411-C9062C4C3E5A - KAYRAHAN YUCE.jpeg" },
       { name: "Nisan Dökmeci", instagram: "nisandokmeci", quote: "Sanata gönül vermiş bir insan.", image: "/images/team/I_14384 - NISAN DOKMECI.jpeg" },
-      { name: "Rinda Yurttaş", instagram: "rindayurttas", quote: "Her zaman pozitif.", image: "/images/team/IMG_3465 - RINDA YURTTAS.png" },
-      { name: "Selin Dinç", quote: "Hayatımı mühendislikle ve sürekli yeni şeyler keşfetmekle şekillendiriyorum; durmak yok.", image: "/images/team/IMG_1512 3 - SELIN DINC.png" },
+      { name: "Rinda Yurttaş", instagram: "rindayurttas", quote: "Her zaman pozitif.", image: "/images/team/IMG_3465 - RINDA YURTTAS.jpg" },
+      { name: "Selin Dinç", quote: "Hayatımı mühendislikle ve sürekli yeni şeyler keşfetmekle şekillendiriyorum; durmak yok.", image: "/images/team/IMG_1512 3 - SELIN DINC.jpg" },
       { name: "Zeynep Duru Güngör", quote: "flexible mind flexible body", image: "/images/team/IMG_2139 - ZEYNEP DURU GORGUN.jpeg" },
     ]
   },
 ];
 
 export const metadata = {
-  title: 'Team | KUDANS - Koç University Dance Club',
-  description: 'Meet the dance performers from KUDANS - Koç University Dance Club',
+  title: "KUDANS - Koç University Dance Club",
+  description: "Official website of KUDANS - Koç University Dance Club",
+  openGraph: {
+    title: "KUDANS - Koç University Dance Club",
+    description: "Official website of KUDANS - Koç University Dance Club",
+    url: "https://kudans.co",
+    siteName: "KUDANS",
+    locale: "tr_TR",
+    type: "website",
+  },
 };
 
 export default function TeamPage() {
@@ -227,7 +235,7 @@ export default function TeamPage() {
                         {dancer.image ? (
                           <Image
                             src={dancer.image}
-                            alt={dancer.name}
+                            alt={`${dancer.name} - KUDANS Team Dancer`}
                             fill
                             className={`object-cover transition-transform duration-500 group-hover:scale-105 ${isEmir ? 'grayscale-0 saturate-150' : ''}`}
                           />
