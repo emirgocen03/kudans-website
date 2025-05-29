@@ -131,7 +131,7 @@ export default function DanceClient({ dance }: DanceClientProps) {
       </section>
 
       {/* Instructors Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-900 to-black">
+      <section id="instructors" className="py-16 bg-gradient-to-b from-gray-900 to-black">
         <div className="container-custom px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
             Meet Your Instructors

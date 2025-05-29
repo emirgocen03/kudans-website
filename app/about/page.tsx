@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from 'next/image';
 
 export default function AboutPage() {
@@ -10,10 +9,14 @@ export default function AboutPage() {
           src="/images/kudans_team.jpg"
           alt="KUDANS Koç University Dance Club Team Photo"
           fill
+          sizes="100vw"
+          quality={85}
           className="object-cover"
           priority
+          placeholder="blur"
+          blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjgyPj4+Oj5CQkJCQkJCQkJCQkJCQkJCQkJCQkL/2wBDAR4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-6xl md:text-7xl font-bold text-white text-center px-4">
             About <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-300">KUDANS</span>
@@ -21,10 +24,9 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Content Section with Gradient Overlay */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-purple-900/20 to-black"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20">
+      {/* Content Section */}
+      <div className="relative bg-gradient-to-b from-black via-purple-900/20 to-black">
+        <div className="max-w-7xl mx-auto px-4 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             {/* Left Column - Description */}
             <div className="lg:col-span-7 space-y-8">

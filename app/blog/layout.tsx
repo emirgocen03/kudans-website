@@ -1,11 +1,7 @@
-import React from 'react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Blog | KUDANS - Koç University Dance Club',
-    template: '%s | KUDANS Blog'
-  },
+  title: 'Blog | KUDANS - Koç University Dance Club',
   description: 'Read the latest news, stories, and updates from KUDANS',
 };
 

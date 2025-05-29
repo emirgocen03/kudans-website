@@ -17,6 +17,73 @@ export const metadata = {
   },
 };
 
+const festivalSchedule = [
+  {
+    day: 1,
+    date: "May 6",
+    color: "purple",
+    events: [
+      { time: "10:30 - 11:30", title: "Music Start" },
+      { time: "11:30 - 12:30", title: "Morning Yoga" },
+      { time: "12:45 - 13:00", title: "Science Gate Announcement" },
+      { time: "13:00 - 13:30", title: "Social Dance" },
+      { time: "13:30 - 15:00", title: "Fair Games" },
+      { time: "15:00 - 16:00", title: "Ümit Sönmezler Hip-hop Workshop" },
+      { time: "16:00 - 17:00", title: "Cha Cha Workshop" },
+      { time: "20:00", title: "SHOW TIME (Doors open at 19:30)", isShow: true }
+    ]
+  },
+  {
+    day: 2,
+    date: "May 7",
+    color: "pink",
+    events: [
+      { time: "10:30 - 11:30", title: "Music Start" },
+      { time: "11:30 - 12:15", title: "Social Dance" },
+      { time: "12:00", title: "BIZ Atölye (With Kaldans in Sports Hall)" },
+      { time: "12:00 - 12:45", title: "Emir Göcen Tap Workshop" },
+      { time: "12:45 - 13:00", title: "Science Gate Announcement" },
+      { time: "13:30 - 14:30", title: "Nazlıhan Vardarlı High Heels Workshop" },
+      { time: "14:30 - 16:00", title: "Game Time" },
+      { time: "16:00", title: "İlayda Deringör & Gökdağ Yalçın (Tango)" },
+      { time: "19:00", title: "SHOW TIME (Doors open at 18:30)", isShow: true }
+    ]
+  },
+  {
+    day: 3,
+    date: "May 8",
+    color: "indigo",
+    events: [
+      { time: "10:30 - 11:30", title: "Music Start" },
+      { time: "11:45 - 12:40", title: "Bora Aktaş & İlbilge Acır (Swing Workshop)" },
+      { time: "12:45 - 13:00", title: "Science Gate Announcement" },
+      { time: "13:00 - 14:00", title: "Social Dance & Fair Games" },
+      { time: "14:00 - 14:50", title: "Tuana & Selena (Hip-hop Workshop)" },
+      { time: "15:00 - 16:00", title: "Emek & Büşra Yeter" },
+      { time: "16:00 - 17:30", title: "Soul Train" },
+      { time: "19:00", title: "SHOW TIME (Doors open at 18:30)", isShow: true }
+    ]
+  }
+];
+
+const previousFestivals = [
+  {
+    title: "Nightmare 2024",
+    imageSrc: "/images/festivals/2024_Nightmare/2024poster.png",
+    link: "/festivals/2024-nightmare"
+  },
+  {
+    title: "Awards 2023",
+    imageSrc: "/images/festivals/2023_Awards/2023poster.png",
+    link: "/festivals/2023-awards"
+  },
+  {
+    title: "Galaxy 2022",
+    imageSrc: "/images/festivals/2022_Galaxy/2022poster.png",
+    link: "/festivals/2022-galaxy"
+  }
+];
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -28,11 +95,11 @@ export default function Home() {
       />
 
       {/* Festival Schedule */}
-      <section className="bg-gradient-to-b from-black to-gray-900 py-16 relative overflow-hidden">
+      <section className="bg-gradient-to-b from-black to-gray-900 py-16 relative overflow-hidden" aria-labelledby="schedule-heading">
         <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-black to-transparent opacity-80"></div>
         <div className="container-custom relative z-10">
           <div className="flex items-center justify-center gap-4 mb-8">
-            <h2 className="text-3xl font-bold text-center text-white relative inline-block">
+            <h2 id="schedule-heading" className="text-3xl font-bold text-center text-white relative inline-block">
               <span className="relative inline-block">
                 Festival Schedule
                 <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-gradient-to-r from-purple-500 to-pink-500"></span>
@@ -47,171 +114,43 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mt-8 sm:mt-12">
-            {/* Day 1 */}
-            <div className="bg-black bg-opacity-60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 transform hover:scale-[1.02] transition-all duration-300 shadow-xl">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Day 1</h3>
-                <span className="bg-purple-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 6</span>
-              </div>
-              
-              <div className="space-y-3 sm:space-y-4">
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
+            {festivalSchedule.map((day) => (
+              <div key={day.day} className="bg-black bg-opacity-60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 transform hover:scale-[1.02] transition-all duration-300 shadow-xl">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">Day {day.day}</h3>
+                  <span className={`bg-${day.color}-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium`}>{day.date}</span>
                 </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:30 - 12:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Morning Yoga</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:00 - 13:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:30 - 15:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Fair Games</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">15:00 - 16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Ümit Sönmezler Hip-hop Workshop</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-purple-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - 17:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Cha Cha Workshop</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-purple-900 to-purple-800 p-3 sm:p-4 rounded-lg mt-4">
-                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">20:00 (Doors open at 19:30)</h4>
+                
+                <div className="space-y-3 sm:space-y-4">
+                  {day.events.map((event, index) => (
+                    <div 
+                      key={index}
+                      className={`bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg ${
+                        event.isShow ? `from-${day.color}-900 to-${day.color}-800` : ''
+                      }`}
+                    >
+                      <span className={`text-${day.color}-400 font-semibold text-xs sm:text-sm uppercase tracking-wider`}>
+                        {event.time}
+                      </span>
+                      <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">
+                        {event.title}
+                      </h4>
+                    </div>
+                  ))}
                 </div>
               </div>
-            </div>
-            
-            {/* Day 2 */}
-            <div className="bg-black bg-opacity-60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 transform hover:scale-[1.02] transition-all duration-300 shadow-xl">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Day 2</h3>
-                <span className="bg-pink-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 7</span>
-              </div>
-              
-              <div className="space-y-3 sm:space-y-4">
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:30 - 12:15</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">BIZ Atölye (With Kaldans in Sports Hall)</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:00 - 12:45</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emir Göcen Tap Workshop</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:30 - 14:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Nazlıhan Vardarlı High Heels Workshop</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">14:30 - 16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Game Time</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-pink-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">İlayda Deringör & Gökdağ Yalçın (Tango)</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-pink-900 to-pink-800 p-3 sm:p-4 rounded-lg mt-4">
-                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">19:00 (Doors open at 18:30)</h4>
-                </div>
-              </div>
-            </div>
-            
-            {/* Day 3 */}
-            <div className="bg-black bg-opacity-60 backdrop-blur-sm rounded-xl p-4 sm:p-6 border border-gray-800 transform hover:scale-[1.02] transition-all duration-300 shadow-xl">
-              <div className="flex items-center justify-between mb-3 sm:mb-4">
-                <h3 className="text-xl sm:text-2xl font-bold text-white">Day 3</h3>
-                <span className="bg-indigo-900 text-white px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium">May 8</span>
-              </div>
-              
-              <div className="space-y-3 sm:space-y-4">
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">10:30 - 11:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Music Start</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">11:45 - 12:40</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Bora Aktaş & İlbilge Acır (Swing Workshop)</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">12:45 - 13:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Science Gate Announcement</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">13:00 - 14:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Social Dance & Fair Games</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">14:00 - 14:50</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Tuana & Selena (Hip-hop Workshop)</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">15:00 - 16:00</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Emek & Büşra Yeter</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-gray-900 to-black p-3 sm:p-4 rounded-lg">
-                  <span className="text-indigo-400 font-semibold text-xs sm:text-sm uppercase tracking-wider">16:00 - 17:30</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">Soul Train</h4>
-                </div>
-
-                <div className="bg-gradient-to-r from-indigo-900 to-indigo-800 p-3 sm:p-4 rounded-lg mt-4">
-                  <span className="text-white font-semibold text-xs sm:text-sm uppercase tracking-wider">SHOW TIME</span>
-                  <h4 className="text-white font-bold mt-1 mb-1 sm:mb-2 text-base sm:text-lg">19:00 (Doors open at 18:30)</h4>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Mission Statement */}
-      <section className="container-custom py-20 relative overflow-hidden">
+      <section className="container-custom py-20 relative overflow-hidden" aria-labelledby="mission-heading">
         <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-gray-800 rounded-full opacity-20"></div>
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-gray-800 rounded-full opacity-20"></div>
         
         <div className="max-w-3xl mx-auto text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-8 text-white relative inline-block">
+          <h2 id="mission-heading" className="text-3xl font-bold mb-8 text-white relative inline-block">
             Our Mission
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-white"></span>
           </h2>
@@ -221,7 +160,12 @@ export default function Home() {
             events that celebrate the joy of movement.
           </p>
           <div className="mt-10">
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSfxECip1tq0q5OaSZYCpRgo6_7N6Fa-2JzkFqZIOe01Sb5-xA/viewform?usp=dialog" className="inline-block bg-white hover:bg-gray-200 text-black px-8 py-3 rounded-full text-lg font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg" target="_blank" rel="noopener noreferrer">
+            <Link 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfxECip1tq0q5OaSZYCpRgo6_7N6Fa-2JzkFqZIOe01Sb5-xA/viewform?usp=dialog" 
+              className="inline-block bg-white hover:bg-gray-200 text-black px-8 py-3 rounded-full text-lg font-medium transition-colors duration-300 hover:scale-105 hover:shadow-lg" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
               Join Us
             </Link>
           </div>
@@ -229,43 +173,36 @@ export default function Home() {
       </section>
 
       {/* Festival Preview */}
-      <section className="bg-gray-900 py-20 relative overflow-hidden">
+      <section className="bg-gray-900 py-20 relative overflow-hidden" aria-labelledby="festivals-heading">
         <div className="absolute top-0 left-0 w-full h-12 bg-gradient-to-b from-black to-transparent opacity-50"></div>
         <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-black to-transparent opacity-50"></div>
         
         <div className="container-custom">
-          <h2 className="text-3xl font-bold mb-16 text-center text-white relative inline-block mx-auto w-full">
+          <h2 id="festivals-heading" className="text-3xl font-bold mb-16 text-center text-white relative inline-block mx-auto w-full">
             <span className="relative inline-block">
               Previous Festivals
               <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white"></span>
             </span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-12">
-            <FestivalPreview
-              title="Nightmare 2024"
-              imageSrc="/images/festivals/2024_Nightmare/2024poster.png"
-              link="/festivals/2024-nightmare"
-            />
-            <FestivalPreview
-              title="Awards 2023"
-              imageSrc="/images/festivals/2023_Awards/2023poster.png"
-              link="/festivals/2023-awards"
-            />
-            <FestivalPreview
-              title="Galaxy 2022"
-              imageSrc="/images/festivals/2022_Galaxy/2022poster.png"
-              link="/festivals/2022-galaxy"
-            />
+            {previousFestivals.map((festival) => (
+              <FestivalPreview
+                key={festival.title}
+                title={festival.title}
+                imageSrc={festival.imageSrc}
+                link={festival.link}
+              />
+            ))}
           </div>
         </div>
       </section>
 
       {/* Social Media */}
-      <section className="container-custom py-20 relative overflow-hidden">
+      <section className="container-custom py-20 relative overflow-hidden" aria-labelledby="social-heading">
         <div className="absolute top-40 right-10 w-64 h-64 bg-gray-800 rounded-full opacity-10 blur-2xl"></div>
         <div className="absolute bottom-20 left-10 w-48 h-48 bg-gray-800 rounded-full opacity-10 blur-2xl"></div>
         
-        <h2 className="text-3xl font-bold mb-12 text-center text-white relative inline-block mx-auto w-full">
+        <h2 id="social-heading" className="text-3xl font-bold mb-12 text-center text-white relative inline-block mx-auto w-full">
           <span className="relative inline-block">
             Connect With Us
             <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white"></span>

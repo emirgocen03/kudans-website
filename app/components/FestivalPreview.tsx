@@ -12,6 +12,8 @@ interface FestivalPreviewProps {
 
 const FestivalPreview = ({ title, imageSrc, link }: FestivalPreviewProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
 
   return (
     <div 
@@ -23,26 +25,44 @@ const FestivalPreview = ({ title, imageSrc, link }: FestivalPreviewProps) => {
         boxShadow: isHovered ? '0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.1)' : '0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.05)'
       }}
     >
-      <Link href={link} className="block relative h-full">
+      <Link 
+        href={link} 
+        className="block relative h-full"
+        aria-label={`View ${title} festival details`}
+      >
         {/* Container with fixed aspect ratio */}
         <div className="relative h-[24rem] sm:h-[28rem] md:h-[34rem] w-full overflow-hidden flex items-center justify-center">
           {/* Background color */}
           <div className="absolute inset-0 bg-gray-900"></div>
           
+          {/* Loading state */}
+          {isLoading && (
+            <div className="absolute inset-0 bg-gray-800 animate-pulse flex items-center justify-center">
+              <div className="w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin"></div>
+            </div>
+          )}
+          
           {/* Image container */}
           <div className="relative w-full h-full p-3">
             <Image
-              src={imageSrc}
-              alt={title}
+              src={imageError ? '/images/placeholder-festival.png' : imageSrc}
+              alt={`${title} Festival Preview`}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain"
+              className={`object-contain transition-opacity duration-300 ${
+                isLoading ? 'opacity-0' : 'opacity-100'
+              }`}
               style={{ 
                 transform: isHovered ? 'scale(1.05)' : 'scale(1)',
                 transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
                 objectPosition: 'center top'
               }}
               priority
+              onLoadingComplete={() => setIsLoading(false)}
+              onError={() => {
+                setImageError(true);
+                setIsLoading(false);
+              }}
             />
           </div>
           
@@ -50,6 +70,7 @@ const FestivalPreview = ({ title, imageSrc, link }: FestivalPreviewProps) => {
           <div 
             className="absolute inset-0 bg-gradient-to-t from-black to-transparent transition-opacity duration-500 pointer-events-none"
             style={{ opacity: isHovered ? 0.7 : 0.5 }}
+            aria-hidden="true"
           />
         </div>
         
@@ -84,6 +105,7 @@ const FestivalPreview = ({ title, imageSrc, link }: FestivalPreviewProps) => {
                 fill="none" 
                 viewBox="0 0 24 24" 
                 stroke="currentColor"
+                aria-hidden="true"
                 style={{ 
                   transform: isHovered ? 'translateX(4px)' : 'translateX(0)',
                 }}
