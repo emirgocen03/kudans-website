@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { DanceStyle } from '../data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaInstagram } from 'react-icons/fa';
 import { FiChevronDown } from 'react-icons/fi';
 
@@ -12,22 +12,35 @@ interface DanceClientProps {
 }
 
 export default function DanceClient({ dance }: DanceClientProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null; // or a loading state
+  }
+
   return (
-    <div className="bg-black text-white">
+    <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/70 to-black z-10" />
           {/* Gradient background based on dance style */}
-          <div className={`absolute inset-0 ${
-            dance.id === 'hiphop' ? 'bg-gradient-to-r from-blue-600 to-purple-600' :
-            dance.id === 'tango' ? 'bg-gradient-to-r from-red-600 to-pink-600' :
-            dance.id === 'social-latin' ? 'bg-gradient-to-r from-orange-500 to-red-600' :
-            dance.id === 'modern' ? 'bg-gradient-to-r from-teal-500 to-blue-500' :
-            dance.id === 'swing' ? 'bg-gradient-to-r from-amber-500 to-orange-600' :
-            dance.id === 'international-ballroom' ? 'bg-gradient-to-r from-indigo-600 to-blue-600' :
-            'bg-gradient-to-r from-purple-600 to-pink-600'
-          }`} />
+          <div 
+            className={`absolute inset-0 ${
+              dance.id === 'hiphop' ? 'bg-gradient-to-r from-blue-600 to-purple-600' :
+              dance.id === 'tango' ? 'bg-gradient-to-r from-red-600 to-pink-600' :
+              dance.id === 'social-latin' ? 'bg-gradient-to-r from-orange-500 to-red-600' :
+              dance.id === 'modern' ? 'bg-gradient-to-r from-teal-500 to-blue-500' :
+              dance.id === 'swing' ? 'bg-gradient-to-r from-amber-500 to-orange-600' :
+              dance.id === 'international-ballroom' ? 'bg-gradient-to-r from-indigo-600 to-blue-600' :
+              'bg-gradient-to-r from-purple-600 to-pink-600'
+            }`}
+            suppressHydrationWarning
+          />
         </div>
         <div className="container-custom relative z-20 text-center px-4">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">

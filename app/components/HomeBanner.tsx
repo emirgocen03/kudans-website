@@ -13,9 +13,12 @@ interface HomeBannerProps {
 const HomeBanner = ({ title, buttonText, buttonLink }: HomeBannerProps) => {
   const [scrollOpacity, setScrollOpacity] = useState(1);
   const [isVisible, setIsVisible] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
+    setIsMounted(true);
+    
     // Set video start time to 10 seconds
     if (videoRef.current) {
       videoRef.current.currentTime = 10;
@@ -40,6 +43,10 @@ const HomeBanner = ({ title, buttonText, buttonLink }: HomeBannerProps) => {
     };
   }, []);
 
+  if (!isMounted) {
+    return null;
+  }
+
   return (
     <div 
       className="relative h-screen flex items-center justify-center overflow-hidden"
@@ -57,31 +64,29 @@ const HomeBanner = ({ title, buttonText, buttonLink }: HomeBannerProps) => {
           className="absolute inset-0 bg-black bg-opacity-60 z-10"
           style={{ opacity: 0.7 + (0.3 * (1 - scrollOpacity)) }}
           aria-hidden="true"
-          suppressHydrationWarning={true}
         />
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            onLoadedMetadata={() => {
-              if (videoRef.current) {
-                videoRef.current.currentTime = 10.1;
-              }
-            }}
-            className="absolute object-cover w-full h-full"
-            style={{ 
-              transform: `scale(${1 + (1 - scrollOpacity) * 0.1})`,
-              transition: 'transform 0.3s ease-out',
-              opacity: 0.9
-            }}
-            aria-hidden="true"
-            suppressHydrationWarning={true}
-          >
-            <source src="/videos/homepage_video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onLoadedMetadata={() => {
+            if (videoRef.current) {
+              videoRef.current.currentTime = 10.1;
+            }
+          }}
+          className="absolute object-cover w-full h-full"
+          style={{ 
+            transform: `scale(${1 + (1 - scrollOpacity) * 0.1})`,
+            transition: 'transform 0.3s ease-out',
+            opacity: 0.9
+          }}
+          aria-hidden="true"
+        >
+          <source src="/videos/homepage_video.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
       {/* Content */}
