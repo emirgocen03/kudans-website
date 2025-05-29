@@ -5,13 +5,14 @@ import { generateMetadata as getMetadata } from './metadata-generator';
 
 export const generateMetadata = getMetadata;
 
-interface PageProps {
+type PageProps = {
   params: {
     slug: string;
   };
-}
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export default function DancePage({ params }: PageProps) {
+export default async function DancePage({ params, searchParams }: PageProps) {
   const dance = danceStyles.find((d) => d.id === params.slug);
   
   if (!dance) {
