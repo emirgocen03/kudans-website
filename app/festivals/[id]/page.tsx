@@ -372,8 +372,9 @@ const getFestivalData = (id: string): Festival | undefined => {
 };
 
 // Metadata for the page
-export async function generateMetadata({ params }: { params: { id: string } }) {
-  const festival = getFestivalData(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
+  const resolvedParams = await params;
+  const festival = getFestivalData(resolvedParams.id);
   
   if (!festival) {
     return {
@@ -388,8 +389,14 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
   };
 }
 
-export default function FestivalPage({ params }: { params: { id: string } }) {
-  const festival = getFestivalData(params.id);
+interface PageProps {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function FestivalPage({ params, searchParams }: PageProps) {
+  const resolvedParams = await params;
+  const festival = getFestivalData(resolvedParams.id);
   
   if (!festival) {
     notFound();

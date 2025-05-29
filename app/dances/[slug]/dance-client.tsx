@@ -13,6 +13,7 @@ interface DanceClientProps {
 
 export default function DanceClient({ dance }: DanceClientProps) {
   const [isMounted, setIsMounted] = useState(false);
+  const [openStates, setOpenStates] = useState<boolean[]>(dance.instructors.map(() => false));
 
   useEffect(() => {
     setIsMounted(true);
@@ -21,6 +22,10 @@ export default function DanceClient({ dance }: DanceClientProps) {
   if (!isMounted) {
     return null; // or a loading state
   }
+
+  const toggleInstructor = (index: number) => {
+    setOpenStates(prev => prev.map((state, i) => i === index ? !state : state));
+  };
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -151,7 +156,6 @@ export default function DanceClient({ dance }: DanceClientProps) {
           </h2>
           <div className={`max-w-4xl mx-auto ${dance.instructors.length === 1 ? 'flex justify-center' : 'grid grid-cols-1 md:grid-cols-2 gap-8'}`}>
             {dance.instructors.map((instructor, index) => {
-              const [open, setOpen] = useState(false);
               // Color for border and gradient based on dance style
               const colorMap = {
                 hiphop: 'from-blue-600 to-purple-600 border-blue-500',
@@ -166,7 +170,7 @@ export default function DanceClient({ dance }: DanceClientProps) {
                 <div
                   key={index}
                   className={`flex flex-col items-center gap-4 bg-gradient-to-br ${styleKey.split(' ')[0]} ${styleKey.split(' ')[1]} bg-opacity-80 border border-gray-800 rounded-2xl p-8 cursor-pointer transition-all duration-300 hover:scale-105 hover:shadow-2xl relative`}
-                  onClick={() => setOpen((prev) => !prev)}
+                  onClick={() => toggleInstructor(index)}
                 >
                   <div className={`relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0 border-4 ${styleKey.split(' ')[2]} shadow-lg`}>
                     <Image
@@ -194,14 +198,14 @@ export default function DanceClient({ dance }: DanceClientProps) {
                       className="flex items-center gap-2 mt-2 text-sm text-gray-200 focus:outline-none"
                       tabIndex={-1}
                       type="button"
-                      onClick={e => { e.stopPropagation(); setOpen((prev) => !prev); }}
+                      onClick={e => { e.stopPropagation(); toggleInstructor(index); }}
                     >
-                      <span>{open ? 'Hide Bio' : 'Show Bio'}</span>
-                      <FiChevronDown className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+                      <span>{openStates[index] ? 'Hide Bio' : 'Show Bio'}</span>
+                      <FiChevronDown className={`transition-transform duration-300 ${openStates[index] ? 'rotate-180' : ''}`} />
                     </button>
                     <div className="w-full border-t border-white/20 my-3"></div>
                     <div
-                      className={`transition-all duration-300 overflow-y-auto w-full ${open ? 'opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
+                      className={`transition-all duration-300 overflow-y-auto w-full ${openStates[index] ? 'opacity-100 mt-2' : 'max-h-0 opacity-0'}`}
                     >
                       {instructor.bio && (
                         <p className="text-gray-100 text-center text-sm px-4 py-2 leading-relaxed">

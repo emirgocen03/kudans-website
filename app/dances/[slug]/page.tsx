@@ -5,14 +5,14 @@ import { generateMetadata as getMetadata } from './metadata-generator';
 
 export const generateMetadata = getMetadata;
 
-export default async function DancePage({
-  params,
-  searchParams,
-}: {
-  params: { slug: string };
-  searchParams: Record<string, string | string[] | undefined>;
-}) {
-  const dance = danceStyles.find((d) => d.id === params.slug);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
+export default async function DancePage({ params, searchParams }: PageProps) {
+  const resolvedParams = await params;
+  const dance = danceStyles.find((d) => d.id === resolvedParams.slug);
   
   if (!dance) {
     notFound();

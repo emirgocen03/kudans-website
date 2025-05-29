@@ -1,9 +1,15 @@
 import { Metadata } from 'next';
 import { danceStyles } from '../data';
 
+interface MetadataProps {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}
+
 // Generate metadata dynamically based on the slug
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const dance = danceStyles.find((dance) => dance.id === params.slug);
+export async function generateMetadata({ params, searchParams }: MetadataProps): Promise<Metadata> {
+  const resolvedParams = await params;
+  const dance = danceStyles.find((dance) => dance.id === resolvedParams.slug);
   
   if (!dance) {
     return {

@@ -89,6 +89,21 @@ const MobileSearch = ({ isOpen, onClose }: MobileSearchProps) => {
         }
       });
 
+      // Search dance styles
+      danceStyles.forEach((dance: DanceStyle) => {
+        if (normalize(dance.title).includes(query) || 
+            normalize(dance.description).includes(query) ||
+            normalize(dance.longDescription).includes(query)) {
+          results.push({
+            id: dance.id,
+            title: dance.title,
+            type: 'dance',
+            path: `/dances/${dance.id}`,
+            description: dance.description
+          });
+        }
+      });
+
       // Search instructors from dance styles
       danceStyles.forEach((dance: DanceStyle) => {
         dance.instructors.forEach((instructor: Instructor) => {
