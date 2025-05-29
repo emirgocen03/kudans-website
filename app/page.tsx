@@ -89,7 +89,18 @@ export default function Home() {
     <div className="min-h-screen">
       {/* Hero Banner */}
       <HomeBanner 
-        title={<Image src="/images/CARNAVAL_banner.png" alt="KUDANS Carnaval Festival 2025 Banner" width={1500} height={400} priority style={{margin: '0 auto'}} />} 
+        title={
+          <div className="w-full max-w-[1500px] mx-auto">
+            <Image 
+              src="/images/CARNAVAL_banner.png" 
+              alt="KUDANS Carnaval Festival 2025 Banner" 
+              width={1500} 
+              height={400} 
+              priority 
+              className="w-full h-auto"
+            />
+          </div>
+        } 
         buttonText="Learn More" 
         buttonLink="https://www.instagram.com/kudans/" 
       />
