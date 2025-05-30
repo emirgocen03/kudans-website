@@ -34,7 +34,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         
         {/* Combined Analytics Scripts */}
-        {/* <Script id="analytics-scripts" strategy="afterInteractive">
+        <Script id="analytics-scripts" strategy="afterInteractive">
           {`
             // Google Tag Manager
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -60,18 +60,18 @@ export default function RootLayout({
               r.appendChild(e);
             })(window,document,'https://static.hj.contentsquare.net/c/csq-','.js',6391710);
           `}
-        </Script> */}
+        </Script>
       </head>
       <body className={`${inter.variable} ${roboto.variable} font-sans min-h-screen flex flex-col bg-black text-white`}>
         {/* Google Tag Manager (noscript) */}
-        {/* <noscript>
+        <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-P3BFQGHM"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
           />
-        </noscript> */}
+        </noscript>
         
         <Navbar />
         <main className="flex-grow">{children}</main>
