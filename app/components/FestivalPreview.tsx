@@ -57,6 +57,7 @@ const FestivalPreview = ({ title, imageSrc, link }: FestivalPreviewProps) => {
                 transition: 'transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1)',
                 objectPosition: 'center top'
               }}
+              loading="lazy"
               onLoadingComplete={() => setIsLoading(false)}
               onError={() => {
                 setImageError(true);

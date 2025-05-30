@@ -238,6 +238,8 @@ export default function TeamPage() {
                             alt={`${dancer.name} - KUDANS Team Dancer`}
                             fill
                             className={`object-cover transition-transform duration-500 group-hover:scale-105 ${isEmir ? 'grayscale-0 saturate-150' : ''}`}
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
                           />
                         ) : (
                           <DefaultProfile name={dancer.name} />
