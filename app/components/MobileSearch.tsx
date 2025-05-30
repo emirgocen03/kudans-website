@@ -12,7 +12,7 @@ import { boardMembers, BoardMember } from '../data/boardData';
 interface SearchResult {
   id: string;
   title: string;
-  type: 'festival' | 'dance' | 'board' | 'instructor' | 'dancer';
+  type: 'festival' | 'dance' | 'board' | 'instructor' | 'dancer' | 'special';
   date?: string;
   path: string;
   description?: string;
@@ -122,6 +122,17 @@ const MobileSearch = ({ isOpen, onClose }: MobileSearchProps) => {
         });
       });
 
+      // Add DBD page to results if query matches
+      const dbdTitle = "A Message for You"; // Or a more fitting title
+      if (query === "dbd") { // Only match if query is exactly 'dbd'
+        results.push({
+          id: "dbd-page",
+          title: dbdTitle,
+          type: "special" as any, 
+          path: "/dbd"
+        });
+      }
+
       setSearchResults(results);
       setIsSearching(false);
     } else {
@@ -196,6 +207,7 @@ const MobileSearch = ({ isOpen, onClose }: MobileSearchProps) => {
                        result.type === 'dance' ? '💃' : 
                        result.type === 'board' ? '👥' :
                        result.type === 'dancer' ? '🕺' :
+                       result.type === 'special' ? '🦋' :
                        '👨‍🏫'}
                     </div>
                     <div className="flex-1 min-w-0">
@@ -206,6 +218,7 @@ const MobileSearch = ({ isOpen, onClose }: MobileSearchProps) => {
                            result.type === 'dance' ? 'Dance Style' : 
                            result.type === 'board' ? 'Board Member' :
                            result.type === 'dancer' ? 'Dancer' :
+                           result.type === 'special' ? 'Special Message' :
                            'Dance Instructor'}
                         </span>
                         {result.date && (
@@ -215,7 +228,7 @@ const MobileSearch = ({ isOpen, onClose }: MobileSearchProps) => {
                           </>
                         )}
                       </div>
-                      {result.description && (
+                      {result.description && result.type !== 'special' && (
                         <div className="text-sm text-gray-500 mt-1 line-clamp-2">
                           {result.description}
                         </div>

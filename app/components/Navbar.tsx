@@ -26,7 +26,7 @@ interface MenuItem {
 interface SearchResult {
   id: string;
   title: string;
-  type: 'festival' | 'dance' | 'board' | 'instructor' | 'dancer';
+  type: 'festival' | 'dance' | 'board' | 'instructor' | 'dancer' | 'special';
   date?: string;
   path: string;
   description?: string;
@@ -171,6 +171,16 @@ const Navbar = () => {
           }
         });
       });
+
+      // Add DBD page to results if query matches
+      if (query === "dbd") {
+        results.push({
+          id: "dbd-page",
+          title: "A Message for You",
+          type: "special",
+          path: "/dbd"
+        });
+      }
 
       setSearchResults(results);
       setIsSearching(false);
@@ -601,10 +611,11 @@ const Navbar = () => {
                                      result.type === 'dance' ? 'Dance Style' : 
                                      result.type === 'board' ? 'Board Member' :
                                      result.type === 'dancer' ? 'Dancer' :
+                                     result.type === 'special' ? 'Special Message' :
                                      'Dance Instructor'}
                                     {result.date && ` • ${result.date}`}
                                   </div>
-                                  {result.description && (
+                                  {result.description && result.type !== 'special' && (
                                     <div className="text-xs text-gray-500 mt-1 line-clamp-2">
                                       {result.description}
                                     </div>
@@ -625,6 +636,7 @@ const Navbar = () => {
                                    result.type === 'dance' ? '💃' : 
                                    result.type === 'board' ? '👥' :
                                    result.type === 'dancer' ? '👨‍🏫' :
+                                   result.type === 'special' ? '🦋' :
                                    '👨‍🏫'}
                                 </div>
                               </div>
