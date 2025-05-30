@@ -71,7 +71,6 @@ const Footer = () => {
                   alt="KUDANS Koç University Dance Club Logo" 
                   fill 
                   className="object-contain" 
-                  priority
                 />
               </div>
             </div>

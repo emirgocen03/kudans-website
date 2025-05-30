@@ -237,8 +237,9 @@ const Navbar = () => {
                 <Image 
                   src="/images/kudans_logo-transparent.png" 
                   alt="KUDANS Koç University Dance Club Logo" 
-                  fill 
-                  className="object-contain object-center scale-150" 
+                  width={300}
+                  height={100}
+                  className="object-contain object-center scale-150 h-full w-full"
                   priority
                 />
               </div>
@@ -475,8 +476,9 @@ const Navbar = () => {
               <Image 
                 src="/images/kudans_logo-transparent.png" 
                 alt="KUDANS Koç University Dance Club Logo" 
-                fill 
-                className="object-contain object-center scale-150" 
+                width={300}
+                height={100}
+                className="object-contain object-center scale-150 h-full w-full"
                 priority
               />
             </div>
