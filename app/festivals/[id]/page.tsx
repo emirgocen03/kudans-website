@@ -13,6 +13,7 @@ interface Festival {
   highlights: string[];
   videos?: { title: string; src: string }[];
   photos?: string[];
+  instagramPosts?: { title: string; src: string }[];
 }
 
 // Fetch festival data (would be replaced with real data fetching in production)
@@ -364,7 +365,14 @@ const getFestivalData = (id: string): Festival | undefined => {
         'Immersive carnival atmosphere with vibrant performances',
         'This is our voice, our platform, our declaration of resistance - #DİRENİŞSAHNEDE',
       ],
-      // No videos or photos yet
+      instagramPosts: [
+        { title: 'Hiphop', src: 'https://www.instagram.com/p/DKCgRRusqW9/embed?hidecaption=true' },
+        { title: 'Swing', src: 'https://www.instagram.com/p/DJ_t9RqMP8v/embed?hidecaption=true' },
+        { title: 'International Ballroom', src: 'https://www.instagram.com/p/DJ9QKOrMkvH/embed?hidecaption=true' },
+        { title: 'Social Latin', src: 'https://www.instagram.com/p/DJ37RiisRIc/embed?hidecaption=true' },
+        { title: 'Modern', src: 'https://www.instagram.com/p/DJ1sOTksadx/embed?hidecaption=true' },
+        { title: 'Tango', src: 'https://www.instagram.com/p/DJza7mzMURm/embed?hidecaption=true' },
+      ],
     },
   ];
 
@@ -441,6 +449,35 @@ export default async function FestivalPage({ params, searchParams }: PageProps) 
           </div>
         </div>
         
+        {/* Instagram Posts Section - Only for Carnaval 2025 if videos are not present */}
+        {festival.id === '2025-carnaval' && festival.instagramPosts && festival.instagramPosts.length > 0 && (
+          <div className="mb-20">
+            <h2 className="text-3xl font-bold mb-10 text-center relative">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">Instagram Highlights</span>
+              <div className="h-1 w-40 bg-white bg-opacity-40 rounded-full mx-auto mt-3"></div>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {festival.instagramPosts.map((post, index) => (
+                <div key={index} className="bg-gray-800 rounded-lg shadow-2xl overflow-hidden transform hover:translate-y-[-5px] transition-all duration-300 border border-gray-700">
+                  <div className="aspect-[4/3.2] relative"> {/* Adjusted aspect ratio for Instagram posts */}
+                    <iframe
+                      src={post.src}
+                      title={post.title}
+                      className="absolute inset-0 w-full h-full"
+                      frameBorder="0"
+                      scrolling="no"
+                      allowTransparency={true}
+                    ></iframe>
+                  </div>
+                  <div className="p-5 bg-gradient-to-r from-gray-800 to-gray-700">
+                    <h3 className="font-bold text-lg text-white">{post.title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+        
         {/* Videos Section */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold mb-10 text-center relative">
@@ -464,6 +501,12 @@ export default async function FestivalPage({ params, searchParams }: PageProps) 
                 </div>
               </div>
             ))}
+            {/* Display message if no videos are available */}
+            {!festival.videos && festival.id === '2025-carnaval' && (
+              <div className="col-span-full text-center text-gray-400 text-xl">
+                <p>Festival videos are not released yet. Stay tuned!</p>
+              </div>
+            )}
           </div>
         </div>
         
