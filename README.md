@@ -40,6 +40,11 @@ The club organizes major annual festivals, workshops with professional instructo
 - **Festival Tickets**: Integrated ticketing system for events
 - **Workshop Registration**: Easy signup for dance classes and special sessions
 
+### 📊 **Analytics & User Insights**
+- **Hotjar Integration**: Heatmap generation to understand user behavior and website interaction patterns
+- **Google Analytics**: Comprehensive traffic analysis, user engagement metrics, and conversion tracking
+- **User Experience Optimization**: Data-driven insights to improve website performance and user journey
+
 ## 🛠️ Technologies Used
 
 - **[Next.js 15](https://nextjs.org/)** - React framework with App Router
@@ -50,6 +55,8 @@ The club organizes major annual festivals, workshops with professional instructo
 - **[React Icons](https://react-icons.github.io/react-icons/)** - Popular icon packs
 - **[Nodemailer](https://nodemailer.com/)** - Email handling for contact forms
 - **[Sentry](https://sentry.io/)** - Error monitoring and performance tracking
+- **[Hotjar](https://www.hotjar.com/)** - Heatmap generation and user behavior analytics
+- **[Google Analytics](https://analytics.google.com/)** - Website traffic and user engagement tracking
 
 ## 📁 Project Structure
 
