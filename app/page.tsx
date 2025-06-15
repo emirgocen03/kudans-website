@@ -12,10 +12,10 @@ const DynamicPreviousFestivals = dynamic(() => import('./components/PreviousFest
 
 export const metadata = {
   title: "KUDANS - Koç University Dance Club",
-  description: "Official website of KUDANS - Koç University Dance Club",
+  description: "KUDANS, Koç University Dance Club, is Istanbul's premier collegiate dance community. Since 2001, we've been inspiring artistic excellence through international ballroom, Latin, hip-hop, and modern dance. Join our award-winning performances, workshops, and festivals that shape Turkey's dance culture.",
   openGraph: {
     title: "KUDANS - Koç University Dance Club",
-    description: "Official website of KUDANS - Koç University Dance Club",
+    description: "KUDANS, Koç University Dance Club, is Istanbul's premier collegiate dance community. Since 2001, we've been inspiring artistic excellence through international ballroom, Latin, hip-hop, and modern dance. Join our award-winning performances, workshops, and festivals that shape Turkey's dance culture.",
     url: "https://kudans.co",
     siteName: "KUDANS",
     locale: "tr_TR",
